@@ -218,12 +218,13 @@ export function HeroSection() {
       <Dialog
         open={demoOpen}
         onClose={() => setDemoOpen(false)}
-        maxWidth="xl"
-        fullWidth
         aria-label="DataForger demo, expanded"
         slotProps={{
           paper: {
             sx: {
+              width: { xs: "92vw", sm: "70vw", md: "50vw" },
+              maxWidth: "960px",
+              m: 2,
               bgcolor: "#0B1220",
               backgroundImage: "none",
               border: "1px solid",
