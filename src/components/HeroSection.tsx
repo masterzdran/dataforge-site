@@ -3,9 +3,8 @@
 import { ArrowForward as ArrowForwardIcon, GitHub as GitHubIcon } from "@mui/icons-material";
 import { Box, Button, Chip, Container, Typography } from "@mui/material";
 import { motion, useReducedMotion } from "framer-motion";
-import { CodeShowcase } from "@/components/CodeShowcase";
+import Image from "next/image";
 import { GITHUB_URL, SUBHEADLINE } from "@/utils/site";
-import { HERO_EXAMPLE } from "@/data/examples";
 
 export function HeroSection() {
   const reduce = useReducedMotion();
@@ -107,7 +106,52 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.35, ease: "easeOut" }}
           >
-            <CodeShowcase example={HERO_EXAMPLE} />
+            <Box
+              sx={{
+                borderRadius: 2,
+                border: "1px solid",
+                borderColor: "divider",
+                overflow: "hidden",
+                bgcolor: "background.paper",
+                boxShadow: "0 24px 60px -30px rgba(99, 102, 241, 0.55)",
+              }}
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 1,
+                  px: 2,
+                  py: 1,
+                  borderBottom: "1px solid",
+                  borderColor: "divider",
+                  bgcolor: "rgba(255, 255, 255, 0.02)",
+                }}
+              >
+                {["#EF4444", "#F59E0B", "#22C55E"].map((color) => (
+                  <Box
+                    key={color}
+                    sx={{ width: 10, height: 10, borderRadius: "50%", bgcolor: color }}
+                  />
+                ))}
+                <Typography
+                  variant="caption"
+                  sx={{ color: "text.secondary", fontFamily: "var(--font-mono)" }}
+                >
+                  demo.gif
+                </Typography>
+              </Box>
+              <Image
+                src="/demo.gif"
+                alt="DataForger generating country-specific synthetic data"
+                width={1400}
+                height={788}
+                priority
+                unoptimized
+                sizes="(max-width: 900px) 100vw, 45vw"
+                style={{ width: "100%", height: "auto", display: "block" }}
+              />
+            </Box>
           </motion.div>
         </Box>
       </Container>

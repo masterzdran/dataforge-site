@@ -38,17 +38,6 @@ Console.WriteLine(person.Name);
   },
 ];
 
-export const HERO_EXAMPLE: CodeExample = {
-  id: "hero",
-  label: "Quick start",
-  filename: "Program.cs",
-  lang: "csharp",
-  code: `var customers =
-    DataForger
-        .ForCountry(Country.PT)
-        .Create<Customer>(100);`,
-};
-
 export const USE_CASES = [
   {
     title: "Development & Testing",
