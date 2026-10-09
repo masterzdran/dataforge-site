@@ -4,7 +4,7 @@ import Script from "next/script";
 import { AppNavbar } from "@/components/AppNavbar";
 import { Footer } from "@/components/Footer";
 import { ThemeRegistry } from "@/theme";
-import { SITE_URL, SUBHEADLINE, TAGLINE } from "@/utils/site";
+import { GITHUB_URL, SITE_URL, SUBHEADLINE, TAGLINE } from "@/utils/site";
 import pkg from "../../package.json";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
@@ -64,7 +64,7 @@ const jsonLd = {
   operatingSystem: ".NET",
   license: "https://opensource.org/licenses/MIT",
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-  sameAs: ["https://github.com/dataforge-net/dataforge"],
+  sameAs: [GITHUB_URL],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
