@@ -1,13 +1,56 @@
 "use client";
 
-import { ArrowForward as ArrowForwardIcon, GitHub as GitHubIcon } from "@mui/icons-material";
-import { Box, Button, Chip, Container, Typography } from "@mui/material";
+import {
+  ArrowForward as ArrowForwardIcon,
+  Close as CloseIcon,
+  GitHub as GitHubIcon,
+  OpenInFull as OpenInFullIcon,
+} from "@mui/icons-material";
+import {
+  Box,
+  Button,
+  ButtonBase,
+  Chip,
+  Container,
+  Dialog,
+  IconButton,
+  Typography,
+} from "@mui/material";
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
+import { useState } from "react";
 import { GITHUB_URL, SUBHEADLINE } from "@/utils/site";
+
+function DemoTitleBar() {
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        gap: 1,
+        px: 2,
+        py: 1,
+        borderBottom: "1px solid",
+        borderColor: "divider",
+        bgcolor: "rgba(255, 255, 255, 0.02)",
+      }}
+    >
+      {["#EF4444", "#F59E0B", "#22C55E"].map((color) => (
+        <Box key={color} sx={{ width: 10, height: 10, borderRadius: "50%", bgcolor: color }} />
+      ))}
+      <Typography
+        variant="caption"
+        sx={{ color: "text.secondary", fontFamily: "var(--font-mono)" }}
+      >
+        demo.gif
+      </Typography>
+    </Box>
+  );
+}
 
 export function HeroSection() {
   const reduce = useReducedMotion();
+  const [demoOpen, setDemoOpen] = useState(false);
   const fade = (delay: number) =>
     reduce
       ? {}
@@ -106,55 +149,116 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.35, ease: "easeOut" }}
           >
-            <Box
+            <ButtonBase
+              onClick={() => setDemoOpen(true)}
+              aria-label="Expand demo"
               sx={{
+                display: "block",
+                width: "100%",
+                p: 0,
                 borderRadius: 2,
-                border: "1px solid",
-                borderColor: "divider",
-                overflow: "hidden",
-                bgcolor: "background.paper",
-                boxShadow: "0 24px 60px -30px rgba(99, 102, 241, 0.55)",
+                cursor: "zoom-in",
+                "&:hover .demo-frame": { borderColor: "primary.main" },
+                "&:hover .demo-overlay": { opacity: 1 },
+                "&:focus-visible .demo-overlay": { opacity: 1 },
               }}
             >
               <Box
+                className="demo-frame"
                 sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 1,
-                  px: 2,
-                  py: 1,
-                  borderBottom: "1px solid",
+                  position: "relative",
+                  borderRadius: 2,
+                  border: "1px solid",
                   borderColor: "divider",
-                  bgcolor: "rgba(255, 255, 255, 0.02)",
+                  overflow: "hidden",
+                  bgcolor: "background.paper",
+                  boxShadow: "0 24px 60px -30px rgba(99, 102, 241, 0.55)",
+                  transition: "border-color 0.2s",
                 }}
               >
-                {["#EF4444", "#F59E0B", "#22C55E"].map((color) => (
-                  <Box
-                    key={color}
-                    sx={{ width: 10, height: 10, borderRadius: "50%", bgcolor: color }}
-                  />
-                ))}
-                <Typography
-                  variant="caption"
-                  sx={{ color: "text.secondary", fontFamily: "var(--font-mono)" }}
+                <Box
+                  className="demo-overlay"
+                  sx={{
+                    position: "absolute",
+                    inset: 0,
+                    zIndex: 1,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: 1,
+                    bgcolor: "rgba(11, 18, 32, 0.55)",
+                    color: "common.white",
+                    opacity: 0,
+                    transition: "opacity 0.2s",
+                    pointerEvents: "none",
+                  }}
                 >
-                  demo.gif
-                </Typography>
+                  <OpenInFullIcon fontSize="small" />
+                  <Typography variant="body2" sx={{ fontWeight: 600 }}>
+                    View full demo
+                  </Typography>
+                </Box>
+                <DemoTitleBar />
+                <Image
+                  src="/demo.gif"
+                  alt="DataForger generating country-specific synthetic data"
+                  width={1400}
+                  height={788}
+                  priority
+                  unoptimized
+                  sizes="(max-width: 900px) 100vw, 45vw"
+                  style={{ width: "100%", height: "auto", display: "block" }}
+                />
               </Box>
-              <Image
-                src="/demo.gif"
-                alt="DataForger generating country-specific synthetic data"
-                width={1400}
-                height={788}
-                priority
-                unoptimized
-                sizes="(max-width: 900px) 100vw, 45vw"
-                style={{ width: "100%", height: "auto", display: "block" }}
-              />
-            </Box>
+            </ButtonBase>
           </motion.div>
         </Box>
       </Container>
+
+      <Dialog
+        open={demoOpen}
+        onClose={() => setDemoOpen(false)}
+        maxWidth="xl"
+        fullWidth
+        aria-label="DataForger demo, expanded"
+        slotProps={{
+          paper: {
+            sx: {
+              bgcolor: "#0B1220",
+              backgroundImage: "none",
+              border: "1px solid",
+              borderColor: "divider",
+            },
+          },
+        }}
+      >
+        <Box sx={{ position: "relative" }}>
+          <IconButton
+            onClick={() => setDemoOpen(false)}
+            aria-label="Close demo"
+            sx={{
+              position: "absolute",
+              top: 8,
+              right: 8,
+              zIndex: 1,
+              bgcolor: "rgba(11, 18, 32, 0.75)",
+              color: "common.white",
+              "&:hover": { bgcolor: "rgba(11, 18, 32, 0.95)" },
+            }}
+          >
+            <CloseIcon />
+          </IconButton>
+          <DemoTitleBar />
+          <Image
+            src="/demo.gif"
+            alt="DataForger generating country-specific synthetic data"
+            width={1400}
+            height={788}
+            unoptimized
+            style={{ width: "100%", height: "auto", display: "block" }}
+          />
+        </Box>
+      </Dialog>
     </Box>
   );
 }
