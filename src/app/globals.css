@@ -1,0 +1,32 @@
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+::selection {
+  background: #4f46e5;
+  color: #ffffff;
+}
+
+/* Syntax tokens (C# / bash highlighting) */
+.tok-c {
+  color: #6b7280;
+  font-style: italic;
+}
+.tok-s {
+  color: #34d399;
+}
+.tok-k {
+  color: #818cf8;
+}
+.tok-n {
+  color: #fbbf24;
+}
+.tok-t {
+  color: #22d3ee;
+}

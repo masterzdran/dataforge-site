@@ -1,0 +1,95 @@
+import type { Country } from "@/types";
+
+export const COUNTRIES: Country[] = [
+  {
+    code: "PT",
+    name: "Portugal",
+    flag: "/flags/pt.png",
+    generators: ["Person", "Address", "Company", "PhoneNumber", "Email", "PostalCode"],
+    identifiers: ["NIF", "Cartão de Cidadão"],
+    sample: [
+      { label: "Person", value: "Ana Martins" },
+      { label: "Address", value: "Rua Augusta 123, 1100-053 Lisboa" },
+      { label: "Phone", value: "+351 912 345 678" },
+      { label: "Company", value: "Lusitânia Tecnologia, Lda." },
+    ],
+  },
+  {
+    code: "ES",
+    name: "Spain",
+    flag: "/flags/es.png",
+    generators: ["Person", "Address", "Company", "PhoneNumber", "Email", "PostalCode"],
+    identifiers: ["DNI", "NIE"],
+    sample: [
+      { label: "Person", value: "Lucía Gómez" },
+      { label: "Address", value: "Calle de Alcalá 45, 28014 Madrid" },
+      { label: "Phone", value: "+34 612 345 678" },
+      { label: "Company", value: "Soluciones Ibéricas S.L." },
+    ],
+  },
+  {
+    code: "FR",
+    name: "France",
+    flag: "/flags/fr.png",
+    generators: ["Person", "Address", "Company", "PhoneNumber", "Email", "PostalCode"],
+    identifiers: ["NIR (INSEE)", "SIRET"],
+    sample: [
+      { label: "Person", value: "Camille Bernard" },
+      { label: "Address", value: "12 Rue de Rivoli, 75004 Paris" },
+      { label: "Phone", value: "+33 6 12 34 56 78" },
+      { label: "Company", value: "Atelier Lumière SAS" },
+    ],
+  },
+  {
+    code: "DE",
+    name: "Germany",
+    flag: "/flags/de.png",
+    generators: ["Person", "Address", "Company", "PhoneNumber", "Email", "PostalCode"],
+    identifiers: ["Steuer-ID", "USt-IdNr."],
+    sample: [
+      { label: "Person", value: "Lena Fischer" },
+      { label: "Address", value: "Hauptstraße 12, 10115 Berlin" },
+      { label: "Phone", value: "+49 151 23456789" },
+      { label: "Company", value: "Rheinwerk Software GmbH" },
+    ],
+  },
+  {
+    code: "GB",
+    name: "United Kingdom",
+    flag: "/flags/gb.png",
+    generators: ["Person", "Address", "Company", "PhoneNumber", "Email", "PostalCode"],
+    identifiers: ["National Insurance (NINO)", "UTR"],
+    sample: [
+      { label: "Person", value: "Oliver Smith" },
+      { label: "Address", value: "221B Baker Street, London NW1 6XE" },
+      { label: "Phone", value: "+44 7700 900123" },
+      { label: "Company", value: "Thames Data Systems Ltd." },
+    ],
+  },
+  {
+    code: "US",
+    name: "United States",
+    flag: "/flags/us.png",
+    generators: ["Person", "Address", "Company", "PhoneNumber", "Email", "PostalCode"],
+    identifiers: ["SSN", "EIN"],
+    sample: [
+      { label: "Person", value: "Jordan Davis" },
+      { label: "Address", value: "600 Market St, San Francisco, CA 94104" },
+      { label: "Phone", value: "+1 (415) 555-0132" },
+      { label: "Company", value: "Cascade Systems Inc." },
+    ],
+  },
+  {
+    code: "BR",
+    name: "Brazil",
+    flag: "/flags/br.png",
+    generators: ["Person", "Address", "Company", "PhoneNumber", "Email", "PostalCode"],
+    identifiers: ["CPF", "CNPJ"],
+    sample: [
+      { label: "Person", value: "Mariana Souza" },
+      { label: "Address", value: "Av. Paulista 1000, Bela Vista, São Paulo - SP" },
+      { label: "Phone", value: "+55 11 91234-5678" },
+      { label: "Company", value: "Tecnologia Verde Ltda." },
+    ],
+  },
+];

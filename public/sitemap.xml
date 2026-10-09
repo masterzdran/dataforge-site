@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://dataforge.dev/</loc></url>
+  <url><loc>https://dataforge.dev/features/</loc></url>
+  <url><loc>https://dataforge.dev/countries/</loc></url>
+  <url><loc>https://dataforge.dev/about/</loc></url>
+  <url><loc>https://dataforge.dev/docs/</loc></url>
+  <url><loc>https://dataforge.dev/docs/getting-started/</loc></url>
+  <url><loc>https://dataforge.dev/docs/installation/</loc></url>
+  <url><loc>https://dataforge.dev/docs/basic-usage/</loc></url>
+  <url><loc>https://dataforge.dev/docs/country-providers/</loc></url>
+  <url><loc>https://dataforge.dev/docs/entity-generators/</loc></url>
+  <url><loc>https://dataforge.dev/docs/collection-generation/</loc></url>
+  <url><loc>https://dataforge.dev/docs/deterministic-generation/</loc></url>
+  <url><loc>https://dataforge.dev/docs/custom-generators/</loc></url>
+  <url><loc>https://dataforge.dev/docs/api-reference/</loc></url>
+</urlset>
