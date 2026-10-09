@@ -1,5 +1,5 @@
 // ponytail: single source of truth for URLs and brand copy
-export const SITE_URL = "https://dataforge.dev"; // ponytail: replace with real domain before launch
+export const SITE_URL = "https://dataforger.fundisk.eu";
 export const GITHUB_URL = "https://github.com/dataforge-net/dataforge"; // ponytail: replace with real repo
 export const BMC_URL = "https://buymeacoffee.com/masterzdran";
 
