@@ -4,6 +4,7 @@ import { AppNavbar } from "@/components/AppNavbar";
 import { Footer } from "@/components/Footer";
 import { ThemeRegistry } from "@/theme";
 import { SITE_URL, SUBHEADLINE, TAGLINE } from "@/utils/site";
+import pkg from "../../package.json";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const jetbrainsMono = JetBrains_Mono({
@@ -80,7 +81,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main id="main-content" style={{ minHeight: "60vh" }}>
             {children}
           </main>
-          <Footer />
+          <Footer version={pkg.version} />
         </ThemeRegistry>
       </body>
     </html>

@@ -1,8 +1,9 @@
 "use client";
 
-import { GitHub as GitHubIcon } from "@mui/icons-material";
+import { GitHub as GitHubIcon, LocalCafe as LocalCafeIcon } from "@mui/icons-material";
 import {
   Box,
+  Button,
   Container,
   Divider,
   IconButton,
@@ -12,7 +13,7 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
-import { GITHUB_URL, NAV_LINKS, SITE_URL, TAGLINE } from "@/utils/site";
+import { BMC_URL, GITHUB_URL, NAV_LINKS, SITE_URL, TAGLINE } from "@/utils/site";
 
 const DOC_LINKS = [
   { label: "Getting Started", href: "/docs/getting-started/" },
@@ -28,7 +29,7 @@ const RESOURCE_LINKS = [
   { label: "Docs Home", href: "/docs/" },
 ];
 
-export function Footer() {
+export function Footer({ version }: { version: string }) {
   return (
     <Box
       component="footer"
@@ -62,6 +63,18 @@ export function Footer() {
             >
               <GitHubIcon fontSize="small" />
             </IconButton>
+            <Button
+              component="a"
+              href={BMC_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="outlined"
+              size="small"
+              startIcon={<LocalCafeIcon />}
+              aria-label="Buy the maintainers a coffee"
+            >
+              Buy me a coffee
+            </Button>
           </Stack>
 
           <Box component="nav" aria-label="Footer navigation">
@@ -110,13 +123,22 @@ export function Footer() {
         </Box>
 
         <Divider sx={{ my: 4 }} />
-        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1.5, justifyContent: "space-between" }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 1.5,
+            rowGap: 0.5,
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
           <Typography variant="caption" sx={{ color: "text.secondary" }}>
-            © 2026 DataForge contributors. MIT License.{" "}
+            © 2026 Fundisk Entertainment. All rights reserved.{" "}
             {/* ponytail: static year, cacheComponents forbids new Date() */}
           </Typography>
           <Typography variant="caption" sx={{ color: "text.secondary" }}>
-            {SITE_URL.replace(/^https:\/\//, "")}
+            DataForge v{version} · MIT License · {SITE_URL.replace(/^https:\/\//, "")}
           </Typography>
         </Box>
       </Container>
