@@ -43,7 +43,7 @@ export function FeaturesSection() {
     <SectionContainer id="features">
       <SectionHeading
         title="Everything you need for realistic test data"
-        description="Six capabilities that make DataForge a drop-in replacement for hand-written fixtures."
+        description="Six capabilities that make DataForger a drop-in replacement for hand-written fixtures."
       />
       <Box
         sx={{
@@ -141,7 +141,7 @@ export function WhySection() {
   return (
     <SectionContainer sx={{ borderTop: "1px solid", borderColor: "divider" }}>
       <SectionHeading
-        title="Why DataForge"
+        title="Why DataForger"
         description="Test data should be a solved problem, not a maintenance burden."
       />
       <Box
@@ -216,7 +216,7 @@ export function OpenSourceSection() {
               Open source at heart
             </Typography>
             <Typography sx={{ maxWidth: 640, mx: "auto", mb: 3 }}>
-              DataForge is MIT licensed and developed in the open. Report issues, propose country
+              DataForger is MIT licensed and developed in the open. Report issues, propose country
               providers, or ship custom generators — the roadmap lives on GitHub.
             </Typography>
             <Button

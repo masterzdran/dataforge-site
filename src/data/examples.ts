@@ -6,7 +6,7 @@ export const CODE_EXAMPLES: CodeExample[] = [
     label: "Person",
     filename: "PersonDemo.cs",
     lang: "csharp",
-    code: `var person = DataForge
+    code: `var person = DataForger
     .ForCountry(Country.PT)
     .Create<Person>();
 
@@ -18,7 +18,7 @@ Console.WriteLine(person.Name);
     label: "Company",
     filename: "CompanyDemo.cs",
     lang: "csharp",
-    code: `var companies = DataForge
+    code: `var companies = DataForger
     .ForCountry(Country.US)
     .Create<Company>(500);
 
@@ -29,7 +29,7 @@ Console.WriteLine(person.Name);
     label: "Seeded",
     filename: "SeededDemo.cs",
     lang: "csharp",
-    code: `var customer = DataForge
+    code: `var customer = DataForger
     .ForCountry(Country.BR)
     .WithSeed(123)
     .Create<Customer>();
@@ -44,7 +44,7 @@ export const HERO_EXAMPLE: CodeExample = {
   filename: "Program.cs",
   lang: "csharp",
   code: `var customers =
-    DataForge
+    DataForger
         .ForCountry(Country.PT)
         .Create<Customer>(100);`,
 };

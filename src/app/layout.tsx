@@ -17,8 +17,8 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `DataForge — ${TAGLINE}`,
-    template: "%s · DataForge",
+    default: `DataForger — ${TAGLINE}`,
+    template: "%s · DataForger",
   },
   description: SUBHEADLINE,
   keywords: [
@@ -34,15 +34,15 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    siteName: "DataForge",
-    title: `DataForge — ${TAGLINE}`,
+    siteName: "DataForger",
+    title: `DataForger — ${TAGLINE}`,
     description: SUBHEADLINE,
     url: SITE_URL,
     locale: "en_US",
   },
   twitter: {
     card: "summary",
-    title: `DataForge — ${TAGLINE}`,
+    title: `DataForger — ${TAGLINE}`,
     description: SUBHEADLINE,
   },
   robots: { index: true, follow: true },
@@ -57,7 +57,7 @@ export const viewport: Viewport = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: "DataForge",
+  name: "DataForger",
   description: SUBHEADLINE,
   url: SITE_URL,
   applicationCategory: "DeveloperApplication",

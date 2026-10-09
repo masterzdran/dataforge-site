@@ -4,7 +4,7 @@ import { AboutPage } from "@/features/about/AboutPage";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Vision, motivation, architecture, roadmap, and contribution guide for the DataForge open-source synthetic data library.",
+    "Vision, motivation, architecture, roadmap, and contribution guide for the DataForger open-source synthetic data library.",
   alternates: { canonical: "/about/" },
 };
 

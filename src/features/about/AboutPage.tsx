@@ -54,14 +54,14 @@ export function AboutPage() {
     <>
       <PageHeader
         eyebrow="About"
-        title="Why DataForge exists"
+        title="Why DataForger exists"
         description="A synthetic data library built the way enterprise .NET teams actually work."
       />
       <Container maxWidth="lg" sx={{ py: { xs: 6, md: 10 } }}>
         <Reveal>
           <Section title="Vision">
             <Typography sx={{ lineHeight: 1.8, maxWidth: 760 }}>
-              Make realistic test data a one-liner. DataForge should be the default first import a
+              Make realistic test data a one-liner. DataForger should be the default first import a
               .NET team reaches for when a database, mock, or demo needs believable data — with zero
               services to run and zero privacy exposure.
             </Typography>
@@ -95,7 +95,7 @@ export function AboutPage() {
             <CodeBlock
               lang="bash"
               filename="Project structure"
-              code={`DataForge/
+              code={`DataForger/
 ├── Builder/        # fluent API: ForCountry, WithSeed, Create
 ├── Countries/      # PT ES FR DE GB US BR providers
 ├── Generators/     # built-in entity generators

@@ -1,6 +1,6 @@
-# DataForge Website
+# DataForger Website
 
-Official product website, documentation portal, and GitHub showcase for [DataForge](https://github.com/dataforge-net/dataforge) — an enterprise-grade synthetic test data generation library for .NET.
+Official product website, documentation portal, and GitHub showcase for [DataForger](https://github.com/dataforge-net/dataforge) — an enterprise-grade synthetic test data generation library for .NET.
 
 ## Stack
 

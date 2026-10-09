@@ -53,7 +53,7 @@ export function Footer({ version }: { version: string }) {
               href={GITHUB_URL}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="DataForge on GitHub"
+              aria-label="DataForger on GitHub"
               sx={{
                 border: "1px solid",
                 borderColor: "divider",
@@ -138,7 +138,7 @@ export function Footer({ version }: { version: string }) {
             {/* ponytail: static year, cacheComponents forbids new Date() */}
           </Typography>
           <Typography variant="caption" sx={{ color: "text.secondary" }}>
-            DataForge v{version} · MIT License · {SITE_URL.replace(/^https:\/\//, "")}
+            DataForger v{version} · MIT License · {SITE_URL.replace(/^https:\/\//, "")}
           </Typography>
         </Box>
       </Container>

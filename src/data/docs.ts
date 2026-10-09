@@ -5,11 +5,11 @@ export const DOCS: Doc[] = [
     slug: "getting-started",
     title: "Getting Started",
     description:
-      "What DataForge is, how it fits into your workflow, and your first generated entity.",
+      "What DataForger is, how it fits into your workflow, and your first generated entity.",
     blocks: [
       {
         type: "p",
-        text: "DataForge is a .NET library for generating realistic, deterministic, country-specific synthetic data. Use it to seed databases, mock APIs, power demos, and feed load tests without ever touching production data.",
+        text: "DataForger is a .NET library for generating realistic, deterministic, country-specific synthetic data. Use it to seed databases, mock APIs, power demos, and feed load tests without ever touching production data.",
       },
       { type: "h2", text: "How it works" },
       {
@@ -17,14 +17,14 @@ export const DOCS: Doc[] = [
         items: [
           "Pick a country provider with `ForCountry`.",
           "Describe the entity as a plain C# class.",
-          "Call `Create<T>()` — DataForge fills every supported property.",
+          "Call `Create<T>()` — DataForger fills every supported property.",
         ],
       },
       { type: "h2", text: "First example" },
       {
         type: "code",
         lang: "csharp",
-        code: `var person = DataForge
+        code: `var person = DataForger
     .ForCountry(Country.PT)
     .Create<Person>();
 
@@ -41,13 +41,13 @@ export const DOCS: Doc[] = [
   {
     slug: "installation",
     title: "Installation",
-    description: "Install DataForge from NuGet with the .NET CLI.",
+    description: "Install DataForger from NuGet with the .NET CLI.",
     blocks: [
-      { type: "p", text: "DataForge ships as a single NuGet package." },
+      { type: "p", text: "DataForger ships as a single NuGet package." },
       {
         type: "code",
         lang: "bash",
-        code: `dotnet add package DataForge`,
+        code: `dotnet add package DataForger`,
       },
       { type: "h2", text: "Requirements" },
       {
@@ -58,13 +58,13 @@ export const DOCS: Doc[] = [
       {
         type: "code",
         lang: "csharp",
-        code: `using DataForge;
+        code: `using DataForger;
 
-var person = DataForge.ForCountry(Country.PT).Create<Person>();`,
+var person = DataForger.ForCountry(Country.PT).Create<Person>();`,
       },
       {
         type: "note",
-        text: "DataForge is a plain library: no database, no API keys, no runtime dependencies.",
+        text: "DataForger is a plain library: no database, no API keys, no runtime dependencies.",
       },
     ],
   },
@@ -80,7 +80,7 @@ var person = DataForge.ForCountry(Country.PT).Create<Person>();`,
       {
         type: "code",
         lang: "csharp",
-        code: `var person = DataForge
+        code: `var person = DataForger
     .ForCountry(Country.PT)
     .Create<Person>();`,
       },
@@ -93,7 +93,7 @@ var person = DataForge.ForCountry(Country.PT).Create<Person>();`,
       {
         type: "code",
         lang: "csharp",
-        code: `var customers = DataForge
+        code: `var customers = DataForger
     .ForCountry(Country.US)
     .Create<Customer>(100);`,
       },
@@ -130,7 +130,7 @@ Country.BR // Brazil`,
       {
         type: "code",
         lang: "csharp",
-        code: `var order = DataForge
+        code: `var order = DataForger
     .ForCountry(Country.DE)
     .Create<Order>();`,
       },
@@ -143,11 +143,11 @@ Country.BR // Brazil`,
   {
     slug: "entity-generators",
     title: "Entity Generators",
-    description: "How DataForge maps your POCOs and which property types it fills.",
+    description: "How DataForger maps your POCOs and which property types it fills.",
     blocks: [
       {
         type: "p",
-        text: "Entities are ordinary C# classes. DataForge matches properties by name and type and fills them with localized values.",
+        text: "Entities are ordinary C# classes. DataForger matches properties by name and type and fills them with localized values.",
       },
       {
         type: "code",
@@ -190,7 +190,7 @@ Country.BR // Brazil`,
       {
         type: "code",
         lang: "csharp",
-        code: `var users = DataForge
+        code: `var users = DataForger
     .ForCountry(Country.GB)
     .Create<User>(1_000);`,
       },
@@ -218,7 +218,7 @@ Country.BR // Brazil`,
       {
         type: "code",
         lang: "csharp",
-        code: `var customer = DataForge
+        code: `var customer = DataForger
     .ForCountry(Country.BR)
     .WithSeed(123)
     .Create<Customer>();
@@ -237,14 +237,14 @@ Country.BR // Brazil`,
       },
       {
         type: "note",
-        text: "Without a seed, DataForge picks a random one — each run gives fresh data.",
+        text: "Without a seed, DataForger picks a random one — each run gives fresh data.",
       },
     ],
   },
   {
     slug: "custom-generators",
     title: "Custom Generators",
-    description: "Extend DataForge with generators for your own domain values.",
+    description: "Extend DataForger with generators for your own domain values.",
     blocks: [
       {
         type: "p",
@@ -259,7 +259,7 @@ Country.BR // Brazil`,
         => $"XX-{context.Random.Next(1000, 9999)}";
 }
 
-var vehicles = DataForge
+var vehicles = DataForger
     .ForCountry(Country.PT)
     .Use(new LicensePlateGenerator())
     .Create<Vehicle>(50);`,
@@ -282,7 +282,7 @@ var vehicles = DataForge
   {
     slug: "api-reference",
     title: "API Reference",
-    description: "Every method on the DataForge builder, at a glance.",
+    description: "Every method on the DataForger builder, at a glance.",
     blocks: [
       { type: "h2", text: "Builder methods" },
       {
@@ -307,7 +307,7 @@ var vehicles = DataForge
       {
         type: "code",
         lang: "csharp",
-        code: `var orders = DataForge
+        code: `var orders = DataForger
     .ForCountry(Country.FR)
     .WithSeed(42)
     .Create<Order>(500);`,

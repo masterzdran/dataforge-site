@@ -8,7 +8,7 @@ import { COUNTRIES } from "@/data/countries";
 export const metadata: Metadata = {
   title: "Supported Countries",
   description:
-    "DataForge country providers for Portugal, Spain, France, Germany, the United Kingdom, the United States, and Brazil.",
+    "DataForger country providers for Portugal, Spain, France, Germany, the United Kingdom, the United States, and Brazil.",
   alternates: { canonical: "/countries/" },
 };
 

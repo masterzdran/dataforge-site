@@ -9,7 +9,7 @@ export function Logo() {
     <Box
       component={Link}
       href="/"
-      aria-label="DataForge home"
+      aria-label="DataForger home"
       sx={{
         display: "flex",
         alignItems: "center",
@@ -39,7 +39,7 @@ export function Logo() {
       >
         Data
         <Box component="span" sx={{ color: "primary.light" }}>
-          Forge
+          Forger
         </Box>
       </Typography>
     </Box>
